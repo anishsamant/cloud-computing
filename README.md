@@ -1,2 +1,2 @@
-# cloud-computing
+# cloud-computing-chatbot
 NYU Cloud Computing Assignment
