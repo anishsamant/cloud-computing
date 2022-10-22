@@ -10,13 +10,13 @@ from requests_aws4auth import AWS4Auth
 
 region = 'us-east-1'
 service = 'es'
-credential = boto3.Session(aws_access_key_id="AKIAVBQSOENFADYX2Y3C",
-                          aws_secret_access_key="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", 
+credential = boto3.Session(aws_access_key_id="",
+                          aws_secret_access_key="", 
                           region_name="us-east-1").get_credentials()
 auth = AWS4Auth(credential.access_key, credential.secret_key, region, service)
 
 
-esEndPoint = 'search-diningconcierge-vf2z6yritmwvxpcegmr24t3wi4.us-east-1.es.amazonaws.com'
+esEndPoint = ''
 
 es = Elasticsearch(
     hosts = [{'host': esEndPoint, 'port': 443}],
@@ -42,7 +42,7 @@ def addItems(data, cuisine):
                 print(e)
 
 cuisines = ['Indian', 'Chinese', 'Italian', 'Continental', 'Mediterranean']
-headers = {'Authorization': 'Bearer OnIZ2NSdAzS6JNfWMxK2vJL-WYEVdObby8zRJow_0axSeF4bsNOFaZFTXuz9bfut-NrBG7TCq5Gd4Pa8okQ18J4KxQijTfEycGeph__rUwKmPJ3cSNgt7QbO6VxTY3Yx'}
+headers = {'Authorization': 'Bearer '}
 
 DEFAULT_LOCATION = 'Brooklyn'
 for cuisine in cuisines:

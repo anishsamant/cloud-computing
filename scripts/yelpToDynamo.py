@@ -6,8 +6,8 @@ from decimal import *
 from time import sleep
 
 client = boto3.resource(service_name='dynamodb',
-                          aws_access_key_id="AKIAVBQSOENFADYX2Y3C",
-                          aws_secret_access_key="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",
+                          aws_access_key_id="",
+                          aws_secret_access_key="",
                           region_name="us-east-1",
                          )
 table = client.Table('yelp-restaurants')
@@ -46,8 +46,8 @@ def addItems(data, cuisine):
                 print(rec)
 
 
-cuisines = ['indian', 'chinese', 'mexican']
-headers = {'Authorization': 'Bearer OnIZ2NSdAzS6JNfWMxK2vJL-WYEVdObby8zRJow_0axSeF4bsNOFaZFTXuz9bfut-NrBG7TCq5Gd4Pa8okQ18J4KxQijTfEycGeph__rUwKmPJ3cSNgt7QbO6VxTY3Yx'}
+cuisines = ['Indian', 'Chinese', 'Italian', 'Continental', 'Mediterranean']
+headers = {'Authorization': 'Bearer '}
 DEFAULT_LOCATION = 'Brooklyn'
 for cuisine in cuisines:
     for i in range(0, 1000, 50):

@@ -64,11 +64,11 @@ def give_recommendations(intent_request):
 
   sqs = boto3.client('sqs',
     region_name = 'us-east-1',
-    aws_access_key_id = 'AKIAVBQSOENFADYX2Y3C',
-    aws_secret_access_key = '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'
+    aws_access_key_id = '',
+    aws_secret_access_key = ''
   )
   sqs.send_message(
-    QueueUrl="https://sqs.us-east-1.amazonaws.com/346857284426/queue-name",
+    QueueUrl="",
     MessageBody=messageBody
   )
       

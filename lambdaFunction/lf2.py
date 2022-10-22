@@ -6,7 +6,7 @@ from requests_aws4auth import AWS4Auth
 
 def receiveMsgFromSqsQueue():
     sqs = boto3.client('sqs')
-    queue_url = 'https://sqs.us-east-1.amazonaws.com/346857284426/queue-name'
+    queue_url = ''
     response = sqs.receive_message(
         QueueUrl=queue_url,
         AttributeNames=['SentTimestamp'],
@@ -21,11 +21,11 @@ def receiveMsgFromSqsQueue():
 def findRestaurantFromElasticSearch(cuisine):
     region = 'us-east-1'
     service = 'es'
-    credentials = boto3.Session(aws_access_key_id="AKIAVBQSOENFADYX2Y3C",
-                          aws_secret_access_key="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", 
+    credentials = boto3.Session(aws_access_key_id="",
+                          aws_secret_access_key="", 
                           region_name="us-east-1").get_credentials()
     awsauth = AWS4Auth(credentials.access_key, credentials.secret_key, region, service, session_token=credentials.token)
-    host = 'search-diningconcierge-vf2z6yritmwvxpcegmr24t3wi4.us-east-1.es.amazonaws.com'
+    host = ''
     index = 'restaurants'
     url = 'https://' + host + '/' + index + '/_search'
     # i am just getting 3 buisiness id from es but its not random rn
@@ -77,7 +77,7 @@ def getMsgToSend(restaurantDetails,message):
     
 def deleteMsg(receipt_handle):
     sqs = boto3.client('sqs')
-    queue_url = 'https://sqs.us-east-1.amazonaws.com/346857284426/queue-name'
+    queue_url = ''
     sqs.delete_message(QueueUrl=queue_url,
     ReceiptHandle=receipt_handle
     )
